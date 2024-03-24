@@ -10,8 +10,8 @@ void main() {
 class PointsCounter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => CounterCubit(),
+    return BlocProvider<CounterCubit>(
+      create: (context) => CounterCubit(CounterAIncrementState()),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         home: HomePage(),
