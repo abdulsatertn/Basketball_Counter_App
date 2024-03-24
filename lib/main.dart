@@ -24,8 +24,6 @@ class HomePage extends StatelessWidget {
   HomePage({
     super.key,
   });
-  int teamApoints = 0;
-  int teamBpoints = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -168,7 +166,9 @@ class HomePage extends StatelessWidget {
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.orange, minimumSize: Size(150, 50)),
-              onPressed: () {},
+              onPressed: () {
+                BlocProvider.of<CounterCubit>(context).reset();
+              },
               child: Text(
                 'Reset',
                 style: TextStyle(color: Colors.black, fontSize: 18),
@@ -180,10 +180,7 @@ class HomePage extends StatelessWidget {
       );
     }, listener: (context, state) {
       if (state is CounterAIncrementState) {
-        teamApoints = BlocProvider.of<CounterCubit>(context).teamAPoints;
-      } else {
-        teamBpoints = BlocProvider.of<CounterCubit>(context).teamBPoints;
-      }
+      } else {}
     });
   }
 }
