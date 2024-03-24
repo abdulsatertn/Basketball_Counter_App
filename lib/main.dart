@@ -45,7 +45,7 @@ class HomePage extends StatelessWidget {
                   children: [
                     Text('Team A', style: TextStyle(fontSize: 32)),
                     Text(
-                      '$teamApoints',
+                      '${BlocProvider.of<CounterCubit>(context).teamAPoints}',
                       style: TextStyle(fontSize: 150),
                     ),
                     ElevatedButton(
@@ -109,7 +109,7 @@ class HomePage extends StatelessWidget {
                   children: [
                     Text('Team B', style: TextStyle(fontSize: 32)),
                     Text(
-                      '$teamBpoints',
+                      '${BlocProvider.of<CounterCubit>(context).teamBPoints}',
                       style: TextStyle(fontSize: 150),
                     ),
                     ElevatedButton(
